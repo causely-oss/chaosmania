@@ -1,0 +1,2 @@
+{{include "postgres.statefulset" "user-db"}}
+{{include "postgres.service" "user-db"}}

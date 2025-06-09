@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: betplacement
+  labels:
+    {{include "common.labels" "betplacement" | nindent 4}}
+spec:
+  selector:
+    matchLabels:
+      {{include "common.labels" "betplacement" | nindent 6}}
+  template:
+    metadata:
+      labels:
+        {{include "common.labels" "betplacement" | nindent 8}}
+    spec:
+      containers: 
+      {{include "chaosmania.container" . | nindent 6}}
+          - name: ENABLED_BACKGROUND_SERVICES
+            value: "{{ .Values.betplacement.background_services | join "," }}"
+      volumes:
+      {{include "common.volumes" . | nindent 6}}
+---
+{{include "chaosmania.service" "betplacement"}}
+---
+{{ if .Values.hpa.enabled }}
+{{ include "chaosmania.hpa" "betplacement" }}
+{{ end }}

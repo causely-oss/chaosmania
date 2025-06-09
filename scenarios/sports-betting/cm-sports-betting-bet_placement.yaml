@@ -1,0 +1,50 @@
+phases:
+- client:
+    workers:
+    - delay: 1s
+      duration: 1200h
+      instances: 1
+  name: phase1
+  setup:
+    actions: []
+  workload:
+    actions:
+    - config:
+        script: |
+          function run() {
+            // Allocate memory for the video
+            ctx.allocate_memory(1024000, 1)
+            // Burn CPU to simulate video processing
+            ctx.burn("100ms")
+            // Send a request for authentication
+            ctx.http_post(ctx.ctx, "http://auth:8080", {actions:[{name:Script,config:{script:function run() {
+              // Burn
+              ctx.burn("10ms");
+              auth_cache = ctx.get_service("auth-cache");
+              auth_cache.set(ctx.ctx, key, value);
+              auth_cache.get(ctx.ctx, key);
+            }}}]});
+  
+            // TODO: Send custom payload
+            // Send a request to upload the video
+            ctx.http_post(ctx.ctx, "http://upload:8080", {actions:[{name:Script,config:{script:function run() {
+              ctx.allocate_memory(1024000, 1);
+              ctx.burn("100ms");
+              var video_data = ctx.random_string(512000);
+              // Create a unique ID for the video
+              video_id = ctx.uuid();
+              // Track the video status in the database
+              upload_db = ctx.get_service(upload-db);
+              upload_db.query(ctx.ctx, "CREATE TABLE IF NOT EXISTS videos (id text PRIMARY KEY, status text);");
+              upload_db.query(ctx.ctx, "INSERT INTO videos (id, status) VALUES (' + video_id + ','uploaded');");
+              // Send a message to the data broker
+              data_broker = ctx.get_service("data-broker-producer");
+              msg = JSON.stringify({
+                "video_id": video_id,
+                "raw_data": video_data,
+                "status": "uploaded",
+              });
+              data_broker.produce(ctx.ctx, "test1", msg);
+            }}}]});
+          }
+      name: Script

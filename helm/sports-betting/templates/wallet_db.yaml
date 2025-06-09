@@ -1,0 +1,2 @@
+{{ include "postgres.statefulset" "wallet-db" }}
+{{ include "postgres.service" "wallet-db" }}

@@ -1,0 +1,2 @@
+{{include "postgres.statefulset" "bet-db"}}
+{{include "postgres.service" "bet-db"}}
