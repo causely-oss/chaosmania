@@ -27,7 +27,7 @@ require (
 	go.opentelemetry.io/otel/sdk v1.38.0
 	go.opentelemetry.io/otel/trace v1.38.0
 	go.uber.org/zap v1.27.0
-	gopkg.in/DataDog/dd-trace-go.v1 v1.74.5
+	gopkg.in/DataDog/dd-trace-go.v1 v1.74.6
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -43,17 +43,17 @@ require (
 	github.com/DataDog/datadog-agent/comp/core/tagger/origindetection v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/obfuscate v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/proto v0.67.0 // indirect
-	github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.67.0 // indirect
+	github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.69.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/trace v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/util/log v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/util/scrubber v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/version v0.67.0 // indirect
 	github.com/DataDog/datadog-go/v5 v5.6.0 // indirect
-	github.com/DataDog/dd-trace-go/contrib/IBM/sarama/v2 v2.2.2 // indirect
-	github.com/DataDog/dd-trace-go/contrib/database/sql/v2 v2.2.2 // indirect
-	github.com/DataDog/dd-trace-go/contrib/go-redis/redis.v8/v2 v2.2.2 // indirect
-	github.com/DataDog/dd-trace-go/contrib/net/http/v2 v2.2.2 // indirect
-	github.com/DataDog/dd-trace-go/v2 v2.2.2 // indirect
+	github.com/DataDog/dd-trace-go/contrib/IBM/sarama/v2 v2.2.3 // indirect
+	github.com/DataDog/dd-trace-go/contrib/database/sql/v2 v2.2.3 // indirect
+	github.com/DataDog/dd-trace-go/contrib/go-redis/redis.v8/v2 v2.2.3 // indirect
+	github.com/DataDog/dd-trace-go/contrib/net/http/v2 v2.2.3 // indirect
+	github.com/DataDog/dd-trace-go/v2 v2.2.3 // indirect
 	github.com/DataDog/go-libddwaf/v4 v4.3.2 // indirect
 	github.com/DataDog/go-runtime-metrics-internal v0.0.4-0.20250721125240-fdf1ef85b633 // indirect
 	github.com/DataDog/go-sqllexer v0.1.6 // indirect
