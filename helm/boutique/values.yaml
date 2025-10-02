@@ -5,11 +5,11 @@ image:
 
 resources:
   limits:
-    cpu: 4000m
+    cpu: 6000m
     memory: 4Gi
   requests:
-    cpu: 10m
-    memory: 64Mi
+    cpu: 1000m
+    memory: 512Mi
 
 serviceMonitor:
   # When set true then use a serviceMonitor to configure scraping
