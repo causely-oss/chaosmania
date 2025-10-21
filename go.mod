@@ -27,7 +27,7 @@ require (
 	go.opentelemetry.io/otel/sdk v1.38.0
 	go.opentelemetry.io/otel/trace v1.38.0
 	go.uber.org/zap v1.27.0
-	gopkg.in/DataDog/dd-trace-go.v1 v1.74.6
+	gopkg.in/DataDog/dd-trace-go.v1 v1.74.7
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -39,7 +39,6 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.1.2 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/storage/azblob v1.0.0 // indirect
 	github.com/BurntSushi/toml v1.5.0 // indirect
-	github.com/DataDog/appsec-internal-go v1.13.0 // indirect
 	github.com/DataDog/datadog-agent/comp/core/tagger/origindetection v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/obfuscate v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/proto v0.67.0 // indirect
@@ -49,11 +48,11 @@ require (
 	github.com/DataDog/datadog-agent/pkg/util/scrubber v0.67.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/version v0.67.0 // indirect
 	github.com/DataDog/datadog-go/v5 v5.6.0 // indirect
-	github.com/DataDog/dd-trace-go/contrib/IBM/sarama/v2 v2.2.3 // indirect
-	github.com/DataDog/dd-trace-go/contrib/database/sql/v2 v2.2.3 // indirect
-	github.com/DataDog/dd-trace-go/contrib/go-redis/redis.v8/v2 v2.2.3 // indirect
-	github.com/DataDog/dd-trace-go/contrib/net/http/v2 v2.2.3 // indirect
-	github.com/DataDog/dd-trace-go/v2 v2.2.3 // indirect
+	github.com/DataDog/dd-trace-go/contrib/IBM/sarama/v2 v2.3.0 // indirect
+	github.com/DataDog/dd-trace-go/contrib/database/sql/v2 v2.3.0 // indirect
+	github.com/DataDog/dd-trace-go/contrib/go-redis/redis.v8/v2 v2.3.0 // indirect
+	github.com/DataDog/dd-trace-go/contrib/net/http/v2 v2.3.0 // indirect
+	github.com/DataDog/dd-trace-go/v2 v2.3.0 // indirect
 	github.com/DataDog/go-libddwaf/v4 v4.3.2 // indirect
 	github.com/DataDog/go-runtime-metrics-internal v0.0.4-0.20250721125240-fdf1ef85b633 // indirect
 	github.com/DataDog/go-sqllexer v0.1.6 // indirect
@@ -98,7 +97,6 @@ require (
 	github.com/eapache/go-resiliency v1.7.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20230731223053-c322873962e3 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
-	github.com/eapache/queue/v2 v2.0.0-20230407133247-75960ed334e4 // indirect
 	github.com/ebitengine/purego v0.8.3 // indirect
 	github.com/elastic/elastic-transport-go/v8 v8.7.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -161,6 +159,7 @@ require (
 	github.com/shirou/gopsutil/v4 v4.25.3 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/stretchr/testify v1.11.1 // indirect
+	github.com/theckman/httpforwarded v0.4.0 // indirect
 	github.com/tinylib/msgp v1.3.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.15 // indirect
 	github.com/tklauser/numcpus v0.10.0 // indirect
@@ -186,7 +185,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	golang.org/x/crypto v0.43.0 // indirect
-	golang.org/x/exp v0.0.0-20250408133849-7e4ce0ab07d0 // indirect
+	golang.org/x/exp v0.0.0-20250606033433-dcc06ee1d476 // indirect
 	golang.org/x/mod v0.28.0 // indirect
 	golang.org/x/net v0.46.0 // indirect
 	golang.org/x/oauth2 v0.30.0 // indirect
