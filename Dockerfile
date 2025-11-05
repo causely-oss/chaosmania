@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 RUN apt-get update && apt-get install -y \
     ca-certificates curl \
@@ -12,10 +12,10 @@ COPY ./plans /plans
 COPY ./scenarios /scenarios
 
 # Create a user group 'chaosmania'
-RUN addgroup --system chaosmania -gid 3000
+RUN groupadd --system --gid 3000 chaosmania
 
 # Create a user 'chaosmania' under 'chaosmania'
-RUN adduser --system --home /home/chaosmania -uid 2000 --ingroup chaosmania chaosmania
+RUN useradd --system --home-dir /home/chaosmania --uid 2000 --gid chaosmania --create-home chaosmania
 
 # Chown all the files to the causely user.
 RUN chown -R chaosmania:chaosmania /bin/chaosmania
