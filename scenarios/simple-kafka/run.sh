@@ -15,7 +15,7 @@ setup_namespace $SCENARIO
 echo
 echo "Deploying Kafka"
 helm upgrade --install --namespace $NAMESPACE \
-    my-kafka oci://registry-1.docker.io/bitnamicharts/kafka
+    my-kafka oci://registry-1.docker.io/soldevelo/kafka-chart
 
 PASSWORD=$(kubectl get secret my-kafka-user-passwords --namespace $NAMESPACE -o jsonpath='{.data.client-passwords}' | base64 -d | cut -d , -f 1)
 
