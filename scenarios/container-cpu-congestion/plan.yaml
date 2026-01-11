@@ -4,7 +4,7 @@ phases:
     client:
       workers:
         - instances: 10
-          duration: 1h
+          duration: 100h
           delay: 500ms
 
     workload:
@@ -17,7 +17,7 @@ phases:
     client:
       workers:
         - instances: 10
-          duration: 1h
+          duration: 100h
           delay: 500ms
 
     workload:

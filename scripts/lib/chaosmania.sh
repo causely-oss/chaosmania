@@ -117,6 +117,12 @@ upgrade_client() {
         $CLIENT_NAME $SCRIPT_DIR/../../helm/client
 }
 
+# Ensure Kafka operator is installed
+ensure_kafka_operator() {
+    local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+    $script_dir/../infrastructure/install-kafka-operator.sh
+}
+
 # Debug mode - set to true to enable command echoing
 DEBUG=${DEBUG:-false}
 if [ "$DEBUG" = true ]; then
