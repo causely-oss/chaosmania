@@ -1,0 +1,11 @@
+kafkaServer:
+  - simple-kafka-cluster-kafka-brokers.cm-simple-kafka.svc.cluster.local:9092
+
+prometheus:
+  serviceMonitor:
+    enabled: true
+    namespace: cm-simple-kafka
+    relabelings:
+      - action: replace
+        replacement: simple-kafka-cluster-kafka-brokers.cm-simple-kafka.svc.cluster.local:9092
+        targetLabel: target
