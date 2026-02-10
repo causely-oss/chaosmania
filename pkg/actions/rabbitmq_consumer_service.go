@@ -2,10 +2,11 @@ package actions
 
 import (
 	"context"
+
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
-	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.39.0"
 	oteltrace "go.opentelemetry.io/otel/trace"
 
 	"github.com/Causely/chaosmania/pkg"
@@ -171,10 +172,10 @@ func (consumer *RabbitMQConsumerService) handleMessage(ctx context.Context, msg 
 	ctx, span := consumeTracer.Start(ctx, "Consume Queue "+consumer.config.Queue, oteltrace.WithSpanKind(oteltrace.SpanKindConsumer))
 	defer span.End()
 	span.SetAttributes(semconv.MessagingDestinationName(consumer.config.Queue))
-	span.SetAttributes(semconv.MessagingSystemRabbitmq)
+	span.SetAttributes(semconv.MessagingSystemRabbitMQ)
 
 	// https://opentelemetry.io/docs/specs/semconv/messaging/kafka/#:~:text=For%20Apache%20Kafka%20producers
-	span.SetAttributes(semconv.PeerService(consumer.config.PeerService))
+	span.SetAttributes(semconv.ServicePeerName(consumer.config.PeerService))
 	span.SetAttributes(attribute.String("peer.namespace", consumer.config.PeerNamespace))
 
 	cfg := ScriptConfig{

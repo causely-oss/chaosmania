@@ -5,7 +5,7 @@ import (
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
-	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.39.0"
 	oteltrace "go.opentelemetry.io/otel/trace"
 
 	"github.com/Causely/chaosmania/pkg"
@@ -160,10 +160,10 @@ func (producer *RabbitMQProducerService) Produce(ctx context.Context, queue stri
 	defer span.End()
 
 	span.SetAttributes(semconv.MessagingDestinationName(queue))
-	span.SetAttributes(semconv.MessagingSystemRabbitmq)
+	span.SetAttributes(semconv.MessagingSystemRabbitMQ)
 
 	// https://opentelemetry.io/docs/specs/semconv/messaging/kafka/#:~:text=For%20Apache%20Kafka%20producers
-	span.SetAttributes(semconv.PeerService(producer.config.PeerService))
+	span.SetAttributes(semconv.ServicePeerName(producer.config.PeerService))
 	span.SetAttributes(attribute.String("peer.namespace", producer.config.PeerNamespace))
 
 	// Send a message
