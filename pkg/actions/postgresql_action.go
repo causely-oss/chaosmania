@@ -15,7 +15,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"go.nhat.io/otelsql"
-	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.39.0"
 	"go.uber.org/zap"
 	sqltrace "gopkg.in/DataDog/dd-trace-go.v1/contrib/database/sql"
 )
@@ -57,7 +57,7 @@ func openPostgres(dsn string, host string, port int, dbname string) (*sql.DB, er
 			otelsql.TraceRowsClose(),
 			otelsql.TraceRowsAffected(),
 			otelsql.WithDatabaseName(dbname),               // Optional.
-			otelsql.WithSystem(semconv.DBSystemPostgreSQL), // Optional.
+			otelsql.WithSystem(semconv.DBSystemNameKey.String("postgresql")), // Optional.
 			otelsql.WithDefaultAttributes(
 				semconv.ServerAddress(host),
 				semconv.ServerPort(port),
