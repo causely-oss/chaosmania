@@ -2,15 +2,16 @@ package actions
 
 import (
 	"context"
+	"io"
+	"strings"
+
 	"github.com/Causely/chaosmania/pkg/logger"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
-	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.39.0"
 	oteltrace "go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
-	"io"
-	"strings"
 
 	"github.com/Causely/chaosmania/pkg"
 	"github.com/minio/minio-go/v7"
@@ -72,7 +73,7 @@ func (ms *MinioService) Get_object(ctx context.Context, bucket string, object st
 		defer span.End()
 
 		span.SetAttributes(semconv.AWSS3Bucket(bucket))
-		span.SetAttributes(semconv.PeerService(ms.config.PeerService))
+		span.SetAttributes(semconv.ServicePeerName(ms.config.PeerService))
 		span.SetAttributes(attribute.String("peer.namespace", ms.config.PeerNamespace))
 	}
 
@@ -110,7 +111,7 @@ func (ms *MinioService) Put_object(ctx context.Context, bucket string, object st
 		defer span.End()
 
 		span.SetAttributes(semconv.AWSS3Bucket(bucket))
-		span.SetAttributes(semconv.PeerService(ms.config.PeerService))
+		span.SetAttributes(semconv.ServicePeerName(ms.config.PeerService))
 		span.SetAttributes(attribute.String("peer.namespace", ms.config.PeerNamespace))
 	}
 
@@ -144,7 +145,7 @@ func (ms *MinioService) Remove_object(ctx context.Context, bucket string, object
 		defer span.End()
 
 		span.SetAttributes(semconv.AWSS3Bucket(bucket))
-		span.SetAttributes(semconv.PeerService(ms.config.PeerService))
+		span.SetAttributes(semconv.ServicePeerName(ms.config.PeerService))
 		span.SetAttributes(attribute.String("peer.namespace", ms.config.PeerNamespace))
 	}
 
