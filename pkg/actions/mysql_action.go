@@ -15,7 +15,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"go.nhat.io/otelsql"
-	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.39.0"
 	"go.uber.org/zap"
 )
 
@@ -56,7 +56,7 @@ func openMysql(dsn string, host string, port int, dbname string) (*sql.DB, error
 			otelsql.TraceRowsClose(),
 			otelsql.TraceRowsAffected(),
 			otelsql.WithDatabaseName(dbname),
-			otelsql.WithSystem(semconv.DBSystemMySQL),
+			otelsql.WithSystem(semconv.DBSystemNameKey.String("mysql")),
 			otelsql.WithDefaultAttributes(
 				semconv.ServerAddress(host),
 				semconv.ServerPort(port),

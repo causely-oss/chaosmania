@@ -3,6 +3,7 @@ package actions
 import (
 	"context"
 	"crypto/tls"
+	"strconv"
 	"time"
 
 	"github.com/Causely/chaosmania/pkg"
@@ -11,7 +12,7 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
-	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.39.0"
 	oteltrace "go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
 	saramatrace "gopkg.in/DataDog/dd-trace-go.v1/contrib/IBM/sarama.v1"
@@ -117,13 +118,13 @@ func (producer *KafkaProducerService) Produce(ctx context.Context, topic string,
 
 	m := &sarama.ProducerMessage{Topic: topic, Value: sarama.StringEncoder(msg)}
 
-	span.SetAttributes(semconv.MessagingKafkaDestinationPartition(int(m.Partition)))
-	span.SetAttributes(semconv.MessagingKafkaMessageOffset(int(m.Offset)))
+	span.SetAttributes(semconv.MessagingDestinationPartitionID(strconv.Itoa(int(m.Partition))))
+	span.SetAttributes(semconv.MessagingKafkaOffset(int(m.Offset)))
 	span.SetAttributes(semconv.MessagingDestinationName(topic))
-	span.SetAttributes(semconv.MessagingSystemKafka)
+	span.SetAttributes(semconv.MessagingSystemKey.String("kafka"))
 
 	// https://opentelemetry.io/docs/specs/semconv/messaging/kafka/#:~:text=For%20Apache%20Kafka%20producers
-	span.SetAttributes(semconv.PeerService(producer.config.PeerService))
+	span.SetAttributes(semconv.ServicePeerName(producer.config.PeerService))
 	span.SetAttributes(attribute.String("peer.namespace", producer.config.PeerNamespace))
 
 	setProduceCheckpoint(m)
