@@ -356,8 +356,8 @@ github.com/redis/go-redis/extra/rediscmd/v9 v9.18.0 h1:QY4nmPHLFAJjtT5O4OMUEOxP8
 github.com/redis/go-redis/extra/rediscmd/v9 v9.18.0/go.mod h1:WH8cY/0fT41Bsf341qzo8v4nx0GCE8FykAA23IVbVmo=
 github.com/redis/go-redis/extra/redisotel/v9 v9.18.0 h1:2dKdoEYBJ0CZCLPiCdvvc7luz3DPwY6hKdzjL6m1eHE=
 github.com/redis/go-redis/extra/redisotel/v9 v9.18.0/go.mod h1:WzkrVG9ro9BwCQD0eJOWn6AGL4Z1CleGflM45w1hu10=
-github.com/redis/go-redis/v9 v9.18.0 h1:pMkxYPkEbMPwRdenAzUNyFNrDgHx9U+DrBabWNfSRQs=
-github.com/redis/go-redis/v9 v9.18.0/go.mod h1:k3ufPphLU5YXwNTUcCRXGxUoF1fqxnhFQmscfkCoDA0=
+github.com/redis/go-redis/v9 v9.19.0 h1:XPVaaPSnG6RhYf7p+rmSa9zZfeVAnWsH5h3lxthOm/k=
+github.com/redis/go-redis/v9 v9.19.0/go.mod h1:v/M13XI1PVCDcm01VtPFOADfZtHf8YW3baQf57KlIkA=
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec h1:W09IVJc94icq4NjY3clb7Lk8O1qJ8BdBEF8z0ibU0rE=
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec/go.mod h1:qqbHyh8v60DhA7CoWK5oRCqLrMHRGoxYCSS9EjAz6Eo=
 github.com/richardartoul/molecule v1.0.1-0.20240531184615-7ca0df43c0b3 h1:4+LEVOB87y175cLJC/mbsgKmoDOjrBldtXvioEy96WY=
