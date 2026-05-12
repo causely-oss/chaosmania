@@ -5,7 +5,7 @@ go 1.26.0
 require (
 	github.com/IBM/sarama v1.48.1
 	github.com/dop251/goja v0.0.0-20231027120936-b396bb4c349d
-	github.com/elastic/go-elasticsearch/v8 v8.19.5
+	github.com/elastic/go-elasticsearch/v8 v8.19.6
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-sql-driver/mysql v1.10.0
 	github.com/google/uuid v1.6.0
