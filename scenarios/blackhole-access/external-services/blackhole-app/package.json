@@ -11,8 +11,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "body-parser": "^1.20.4",
-    "express": "^4.22.1",
+    "body-parser": "^1.20.5",
+    "express": "^4.22.2",
     "http-proxy": "^1.18.1"
   }
 }
