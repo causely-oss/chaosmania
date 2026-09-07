@@ -7,7 +7,7 @@ require (
 	github.com/dop251/goja v0.0.0-20231027120936-b396bb4c349d
 	github.com/elastic/go-elasticsearch/v8 v8.19.7
 	github.com/go-redis/redis/v8 v8.11.5
-	github.com/go-sql-driver/mysql v1.10.0
+	github.com/go-sql-driver/mysql v1.10.1
 	github.com/google/uuid v1.6.0
 	github.com/lib/pq v1.12.3
 	github.com/minio/minio-go/v7 v7.3.0
