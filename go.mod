@@ -13,7 +13,7 @@ require (
 	github.com/minio/minio-go/v7 v7.3.0
 	github.com/prometheus/client_golang v1.24.1
 	github.com/redis/go-redis/extra/redisotel/v9 v9.22.0
-	github.com/redis/go-redis/v9 v9.22.0
+	github.com/redis/go-redis/v9 v9.23.0
 	github.com/rotisserie/eris v0.5.4
 	github.com/snowflakedb/gosnowflake v1.19.1
 	github.com/streadway/amqp v1.1.0
@@ -180,7 +180,7 @@ require (
 	go.opentelemetry.io/otel/log v1.47.0 // indirect
 	go.opentelemetry.io/otel/metric v1.47.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.11.0 // indirect
-	go.uber.org/atomic v1.11.0 // indirect
+	go.uber.org/atomic v1.12.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/crypto v0.57.0 // indirect
