@@ -350,7 +350,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
         - name: minio
-          image: minio/minio
+          image: pgsty/silo
           args:
             - server
             - /data
